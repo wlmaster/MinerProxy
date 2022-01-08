@@ -18,15 +18,11 @@ bash <(curl -s -L https://git.io/J9swx)
 ### 输入命令回车之后一直卡住不动，换这种办法
 ubuntu/debian 系统安装
 ```bash
-wget: apt-get update -y && apt-get install wget -y
+apt-get update -y && apt-get install wget -y
 ```
 centos 系统安装
 ```bash
 yum update -y && yum install wget -y
-```
-ubuntu/debian 提示Command 'wget:' not found, did you mean 使用以下命令！
-```bash
-apt-get update -y && apt-get install wget -y
 ```
 安装好 wget 之后 下载脚本并执行
 ```bash
