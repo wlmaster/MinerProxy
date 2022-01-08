@@ -24,7 +24,7 @@ centos 系统安装
 ```bash
 yum update -y && yum install wget -y
 ```
-ubuntu/debian 提示Command 'wget:' not found, did you mean 使用一下命令！
+ubuntu/debian 提示Command 'wget:' not found, did you mean 使用以下命令！
 ```bash
 apt-get update -y && apt-get install wget -y
 ```
