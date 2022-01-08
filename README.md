@@ -4,7 +4,7 @@
 # 矿工交流 TG电报群：https://t.me/minerproxyc
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/96627099/147364637-3db2caea-f536-4a9c-ad7d-d062559d46fe.png" width="500" height="500" />
+<img src="https://github.com/wlmaster/minerproxy/blob/main/TGLOGO.png" width="500" height="500" />
 </div>
 
 # Liunx-一键安装脚本
