@@ -7,6 +7,11 @@
 <img src="https://github.com/wlmaster/minerproxy/blob/main/TGLOGO.png" width="500" height="500" />
 </div>
 
+# WEB管理页面
+<div align="center">
+<img src="https://github.com/wlmaster/minerproxy/blob/main/img_4.png" width="950" height="550" />
+</div>
+
 # Liunx-一键安装脚本
 好处：适合又想要Linux稳定性的，又不懂Linux的小白的学习者<br />
 功能：包含自启动和进程守护，重启后可以自动运行，会放开防火墙和连接数限制，一键搞定<br />
