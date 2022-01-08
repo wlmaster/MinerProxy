@@ -24,6 +24,10 @@ centos 系统安装
 ```bash
 yum update -y && yum install wget -y
 ```
+ubuntu/debian 提示Command 'wget:' not found, did you mean 使用一下命令！
+```bash
+apt-get update -y && apt-get install wget -y
+```
 安装好 wget 之后 下载脚本并执行
 ```bash
 wget https://github.com/wlmaster/minerproxy/blob/main/install.sh
