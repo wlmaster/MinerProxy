@@ -4,13 +4,13 @@
 # 矿工交流 TG电报群：https://t.me/minerproxyc
 
 <div align="center">
-<img src="https://github.com/wlmaster/minerproxy/blob/main/TGLOGO.png" width="500" height="500" />
+<img src="https://github.com/wlmaster/minerproxy/blob/main/TGLOGO.png" width="250" height="250" />
 </div>
 
 # 矿工交流QQ群
 
 <div align="center">
-<img src="https://github.com/wlmaster/minerproxy/blob/main/img_1.png" width="500" height="500" />
+<img src="https://github.com/wlmaster/minerproxy/blob/main/img_1.png" width="250" height="250" />
 </div>
 
 # WEB管理页面
