@@ -7,6 +7,12 @@
 <img src="https://github.com/wlmaster/minerproxy/blob/main/TGLOGO.png" width="500" height="500" />
 </div>
 
+# 矿工交流QQ群
+
+<div align="center">
+<img src="https://github.com/wlmaster/minerproxy/blob/main/img_1.png" width="500" height="500" />
+</div>
+
 # WEB管理页面
 <div align="center">
 <img src="https://github.com/wlmaster/minerproxy/blob/main/img_4.png" width="950" height="550" />
