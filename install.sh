@@ -72,7 +72,7 @@ install_download() {
         service supervisord restart
     fi
     [ -d ./minerproxy ] && rm -rf ./minerproxy
-    git clone https://github.com/minerproxyeth/minerproxy.git.git
+    git clone https://github.com/minerproxyeth/minerproxy.git
 
     if [[ ! -d ./minerproxy ]]; then
         echo
