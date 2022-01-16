@@ -50,8 +50,8 @@ else
 
 fi
 
-if [ ! -d "/etc/MinerProxy/" ]; then
-    mkdir /etc/MinerProxy/
+if [ ! -d "/etc/minerproxy/" ]; then
+    mkdir /etc/minerproxy/
 fi
 
 error() {
@@ -59,7 +59,7 @@ error() {
 }
 
 install_download() {
-    installPath="/etc/MinerProxy"
+    installPath="/etc/minerproxy"
     $cmd update -y
     if [[ $cmd == "apt-get" ]]; then
         $cmd install -y lrzsz git zip unzip curl wget supervisor
@@ -71,10 +71,10 @@ install_download() {
         systemctl enable supervisord
         service supervisord restart
     fi
-    [ -d ./MinerProxy ] && rm -rf ./MinerProxy
+    [ -d ./minerproxy ] && rm -rf ./minerproxy
     git clone https://github.com/mp-minerproxy/minerproxy.git
 
-    if [[ ! -d ./MinerProxy ]]; then
+    if [[ ! -d ./minerproxy ]]; then
         echo
         echo -e "$red 克隆脚本仓库出错了...$none"
         echo
@@ -82,7 +82,7 @@ install_download() {
         echo
         exit 1
     fi
-    cp -rf ./MinerProxy /etc/
+    cp -rf ./minerproxy /etc/
     if [[ ! -d $installPath ]]; then
         echo
         echo -e "$red 复制文件出错了...$none"
@@ -172,7 +172,7 @@ start_write_config() {
     sleep 1
     echo "[******----]"
     echo
-    cat /etc/MinerProxy/config.yml
+    cat /etc/minerproxy/config.yml
     echo "----------------------------------------------------------------"
 }
 
