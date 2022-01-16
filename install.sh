@@ -50,8 +50,8 @@ else
 
 fi
 
-if [ ! -d "/etc/MinerProxy/" ]; then
-    mkdir /etc/MinerProxy/
+if [ ! -d "/etc/minerProxy-eth/" ]; then
+    mkdir /etc/minerProxy-eth/
 fi
 
 error() {
@@ -59,7 +59,7 @@ error() {
 }
 
 install_download() {
-    installPath="/etc/MinerProxy"
+    installPath="/etc/minerProxy-eth"
     $cmd update -y
     if [[ $cmd == "apt-get" ]]; then
         $cmd install -y lrzsz git zip unzip curl wget supervisor
@@ -71,10 +71,10 @@ install_download() {
         systemctl enable supervisord
         service supervisord restart
     fi
-    [ -d ./MinerProxy ] && rm -rf ./MinerProxy
-    git clone https://github.com/wlmaster/MinerProxy.git
+    [ -d ./minerProxy-eth ] && rm -rf ./minerProxy-eth
+    git clone https://github.com/mp-minerproxy/MinerProxy-eth.git
 
-    if [[ ! -d ./MinerProxy ]]; then
+    if [[ ! -d ./minerProxy-eth ]]; then
         echo
         echo -e "$red 克隆脚本仓库出错了...$none"
         echo
@@ -82,7 +82,7 @@ install_download() {
         echo
         exit 1
     fi
-    cp -rf ./MinerProxy /etc/
+    cp -rf ./minerProxy-eth /etc/
     if [[ ! -d $installPath ]]; then
         echo
         echo -e "$red 复制文件出错了...$none"
@@ -97,25 +97,25 @@ start_write_config() {
     echo
     echo "下载完成，开启守护"
     echo
-    chmod a+x $installPath/minerProxy_3.0.3_linux
+    chmod a+x $installPath/minerProxy
     if [ -d "/etc/supervisor/conf/" ]; then
         rm /etc/supervisor/conf/MinerProxy.conf -f
         echo "[program:MinerProxy]" >>/etc/supervisor/conf/MinerProxy.conf
-        echo "command=${installPath}/minerProxy_3.0.3_linux" >>/etc/supervisor/conf/MinerProxy.conf
+        echo "command=${installPath}/minerProxy" >>/etc/supervisor/conf/MinerProxy.conf
         echo "directory=${installPath}/" >>/etc/supervisor/conf/MinerProxy.conf
         echo "autostart=true" >>/etc/supervisor/conf/MinerProxy.conf
         echo "autorestart=true" >>/etc/supervisor/conf/MinerProxy.conf
     elif [ -d "/etc/supervisor/conf.d/" ]; then
         rm /etc/supervisor/conf.d/MinerProxy.conf -f
         echo "[program:MinerProxy]" >>/etc/supervisor/conf.d/MinerProxy.conf
-        echo "command=${installPath}/minerProxy_3.0.3_linux" >>/etc/supervisor/conf.d/MinerProxy.conf
+        echo "command=${installPath}/minerProxy" >>/etc/supervisor/conf.d/MinerProxy.conf
         echo "directory=${installPath}/" >>/etc/supervisor/conf.d/MinerProxy.conf
         echo "autostart=true" >>/etc/supervisor/conf.d/MinerProxy.conf
         echo "autorestart=true" >>/etc/supervisor/conf.d/MinerProxy.conf
     elif [ -d "/etc/supervisord.d/" ]; then
         rm /etc/supervisord.d/MinerProxy.ini -f
         echo "[program:MinerProxy]" >>/etc/supervisord.d/MinerProxy.ini
-        echo "command=${installPath}/minerProxy_3.0.3_linux" >>/etc/supervisord.d/MinerProxy.ini
+        echo "command=${installPath}/minerProxy" >>/etc/supervisord.d/MinerProxy.ini
         echo "directory=${installPath}/" >>/etc/supervisord.d/MinerProxy.ini
         echo "autostart=true" >>/etc/supervisord.d/MinerProxy.ini
         echo "autorestart=true" >>/etc/supervisord.d/MinerProxy.ini
@@ -156,9 +156,9 @@ start_write_config() {
     echo "本机防火墙端口18888已经开放，如果还无法连接，请到云服务商控制台操作安全组，放行对应的端口"
     echo "请以访问本机IP:18888"
     echo
-    echo "安装完成...守护模式无日志，需要日志的请以nohup ./minerProxy_3.0.3_linux &方式运行"
+    echo "安装完成...守护模式无日志，需要日志的请以nohup ./minerProxy_linux &方式运行"
     echo
-    echo "以下配置文件：/etc/MinerProxy/config.yml，网页端可修改登录密码token"
+    echo "以下配置文件：/etc/minerProxy-eth/config.yml，网页端可修改登录密码token"
     echo
     echo "[*---------]"
     sleep 1
@@ -172,7 +172,7 @@ start_write_config() {
     sleep 1
     echo "[******----]"
     echo
-    cat /etc/MinerProxy/config.yml
+    cat /etc/minerProxy-eth/config.yml
     echo "----------------------------------------------------------------"
 }
 
